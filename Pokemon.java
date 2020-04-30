@@ -1,8 +1,8 @@
 public abstract class Pokemon{
     //Attribute
-    protected static String name;
-    protected static int hp;
-    protected static String image;
+    protected String name;
+    protected int hp;
+    protected String image;
     
     //Constructor
     public Pokemon(String name){
@@ -22,14 +22,14 @@ public abstract class Pokemon{
     }
     //Accessor Method
     public String getName(){
-        return name;
+        return this.name;
     }
 
     public void setHP(int hp){
         this.hp = hp;
     }
-    public static int getHP(){
-        return hp;
+    public int getHP(){
+        return this.hp;
     }
     
     public String getImage(){

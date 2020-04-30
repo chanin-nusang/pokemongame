@@ -7,8 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-//import sun.swing.table.DefaultTableCellHeaderRenderer;
-
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
@@ -33,9 +31,7 @@ public class GUI_bag extends JFrame{
 		Trainer pp = new Trainer();
 		Object[][] data = new Object[pp.getBag().size()][5];
 
-		//Trainer pp = new Trainer();
 		ArrayList<Pokemon> pok = pp.getBag();
-		//ArrayList<Pokemon> pok = PokemonRandomizer.getPokemons(100);
 
         frame = new JFrame("Pokemon Game");
         frame.setResizable(false);
@@ -49,6 +45,7 @@ public class GUI_bag extends JFrame{
         JButton btn_menu = new JButton("");
 		btn_menu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				pp.levelUp();
 				GUI_MainMenu mn = new GUI_MainMenu();
         		mn.frame.setVisible(true);
 				frame.dispose();
@@ -463,6 +460,7 @@ class ButtonEditor2 extends DefaultCellEditor
 		else{
 			Trainer.getBag().get(rw).setHP(Trainer.getBag().get(rw).getHP()+10);
 			Trainer.setPotion(Trainer.getPotion()-1);
+			Trainer.setXP(Trainer.getXP() + 1);
 			GUI_bag.frame.dispose();
 			GUI_bag mn = new GUI_bag();
 			mn.frame.setVisible(true);

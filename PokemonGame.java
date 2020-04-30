@@ -3,7 +3,9 @@ import java.util.ArrayList;
 public class PokemonGame {
     public static void main(String[] args){
         System.out.println("Hello Pokemon Game");
-        //Trainer t = new Trainer("REALCHANIN");
+        //Trainer t = new Trainer();
+        Trainer.getBag().add(new PokArcanine("Arcanine"));
+
         
         //MainGame mg = new MainGame();
 
@@ -15,7 +17,6 @@ public class PokemonGame {
 
         //Trainer.getBag().add(new Pikachu("Pikachu of Satochi"));
         //Trainer.getBag().add(new Raichu("Pikachu of Raichu"));
-        Trainer.getBag().add(new PokArcanine("Arcanine"));
 
         GUI_find fi = new GUI_find();
         fi.frame.setVisible(true);

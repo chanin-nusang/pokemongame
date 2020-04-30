@@ -13,7 +13,7 @@ public class PokemonRandomizer {
         int pokemonNumber = (int)(Math.random()*num) + 1;
         
         for(int i=0; i<pokemonNumber ; ++i){
-            int type = (int)(Math.random()*3);
+            int type = (int)(Math.random()*10);
             if(type==0)
                 pokemons.add(new PokDrogonite("Drogonite"));
             else if(type==1)

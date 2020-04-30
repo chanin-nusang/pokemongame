@@ -17,6 +17,7 @@ public class GUI_MainMenu extends JFrame{
 	private void menu(){
 
 		Trainer tn3 = new Trainer();
+		
         //nameTn = tn.getName();
         //System.out.println(Trainer.getName());
 		
