@@ -6,7 +6,7 @@ public class PokVaporeon extends Pokemon {
 
     public void attack(Pokemon enemy){
         System.out.println("Pokemon " + name + " attack " + enemy.getName());
-        enemy.damage(550);
+        enemy.damage(10);
     }
 
 }

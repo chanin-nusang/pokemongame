@@ -6,7 +6,7 @@ public class PokVictreebel extends Pokemon {
 
     public void attack(Pokemon enemy){
         System.out.println("Pokemon " + name + " attack " + enemy.getName());
-        enemy.damage(1340);
+        enemy.damage(10);
     }
 
 }

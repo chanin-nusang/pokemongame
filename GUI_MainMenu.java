@@ -1,5 +1,4 @@
 import javax.swing.*;
-import javax.swing.plaf.BorderUIResource;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -8,7 +7,6 @@ public class GUI_MainMenu extends JFrame{
     protected JFrame frame;
 	protected String playerName;
 	protected JTextField t1;
-	//Trainer tnn;
 
     public GUI_MainMenu() {
 		menu();
@@ -17,9 +15,6 @@ public class GUI_MainMenu extends JFrame{
 	private void menu(){
 
 		Trainer tn3 = new Trainer();
-		
-        //nameTn = tn.getName();
-        //System.out.println(Trainer.getName());
 		
         frame = new JFrame("Pokemon Game");
         frame.setResizable(false);
@@ -114,6 +109,7 @@ public class GUI_MainMenu extends JFrame{
         JButton btn_exit = new JButton("");
 		btn_exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				System.out.println("End Pokemon Game");
 				System.exit(0);
 			}
 		});
@@ -127,5 +123,4 @@ public class GUI_MainMenu extends JFrame{
 		frame.getContentPane().add(Lab_menubg);
 
     }
-
 }

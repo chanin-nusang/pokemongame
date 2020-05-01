@@ -1,32 +1,20 @@
 import javax.swing.*;
-import javax.swing.plaf.BorderUIResource;
 import java.awt.*;
 import java.awt.event.*;
 
 public class GUI_me extends JFrame{
     protected JFrame frame;
     protected JDialog dialog;
-    //public String sName;
-    //Trainer nameTrainer;
-    //Trainer tn = new Trainer();
 
-    
-
-    public GUI_me() {
-        
-        meInfo(); //(new Trainer().getName());  //(tn.getName());
+    public GUI_me() {     
+        meInfo();
     }
 
-    private void meInfo(){ //(String nameTn){
-    //public GUI_me(){
-        
-        //String nameTn;
+    private void meInfo(){ 
 
         Trainer tnn = new Trainer();
-        //nameTn = tnn.getName();
         System.out.println(tnn.getName());
 
-        //System.out.println(nameTn);
         frame = new JFrame("Pokemon Game");
         frame.setResizable(false);
 		frame.setBounds(0, 0, 800, 600);
@@ -98,61 +86,56 @@ public class GUI_me extends JFrame{
 		Lab_bagbg.setBounds(0, 0, 800, 600);
 		frame.getContentPane().add(Lab_bagbg);
     }
-
 }
 
 class MyDialogPopup extends JDialog {
 
     public String sName;
 
-		public MyDialogPopup() {
+	public MyDialogPopup() {
 
-            Trainer tn2 = new Trainer();
+        Trainer tn2 = new Trainer();
 
-			setBounds(100, 100, 296, 175);
-			setTitle("Rename");
-            setLocationRelativeTo(null);
-            ImageIcon dia = new ImageIcon("image/pokemonicon.png");
-            setIconImage(dia.getImage());
-            getContentPane().setLayout(null);
-            setBackground(Color.YELLOW);
-            
-			
-			// Create Input 
-			final JTextField name = new JTextField(tn2.getName());
-			name.setBounds(57, 36, 175, 30);
-            getContentPane().add(name);
-            name.setFont(new Font("Pokemon Solid", Font.PLAIN, 16));
-			
-			// Button OK
-			JButton btnOK = new JButton();
-			btnOK.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-                    sName = name.getText();
-                    tn2.setName(name.getText());
-					dispose();
-				}
-            });
-            btnOK.setIcon(new ImageIcon("image/b_ok.png"));
-			btnOK.setBounds(35, 93, 100, 30);
-			getContentPane().add(btnOK);
-			
-			// Button Cancel
-			JButton btnCancel = new JButton();
-			btnCancel.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-                    sName = tn2.getName();
-					dispose();
-				}
-            });
-            btnCancel.setIcon(new ImageIcon("image/b_cancel.png"));
-			btnCancel.setBounds(145, 93, 100, 30);
-            getContentPane().add(btnCancel);
-            
-            JLabel Lab_editbg = new JLabel(" ");
-		    Lab_editbg.setIcon(new ImageIcon("image/editnamedialog.png"));
-		    Lab_editbg.setBounds(0, 0, 296, 175);
-            getContentPane().add(Lab_editbg);
-			
-		}
+        setBounds(100, 100, 296, 175);
+        setTitle("Rename");
+        setLocationRelativeTo(null);
+        ImageIcon dia = new ImageIcon("image/pokemonicon.png");
+        setIconImage(dia.getImage());
+        getContentPane().setLayout(null);
+        setBackground(Color.YELLOW);
+        
+        final JTextField name = new JTextField(tn2.getName());
+        name.setBounds(57, 36, 175, 30);
+        getContentPane().add(name);
+        name.setFont(new Font("Pokemon Solid", Font.PLAIN, 16));
+        
+        JButton btnOK = new JButton();
+        btnOK.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                sName = name.getText();
+                tn2.setName(name.getText());
+                dispose();
+            }
+        });
+        btnOK.setIcon(new ImageIcon("image/b_ok.png"));
+        btnOK.setBounds(35, 93, 100, 30);
+        getContentPane().add(btnOK);
+        
+        JButton btnCancel = new JButton();
+        btnCancel.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                sName = tn2.getName();
+                dispose();
+            }
+        });
+        btnCancel.setIcon(new ImageIcon("image/b_cancel.png"));
+        btnCancel.setBounds(145, 93, 100, 30);
+        getContentPane().add(btnCancel);
+        
+        JLabel Lab_editbg = new JLabel(" ");
+        Lab_editbg.setIcon(new ImageIcon("image/editnamedialog.png"));
+        Lab_editbg.setBounds(0, 0, 296, 175);
+        getContentPane().add(Lab_editbg);
+        
+    }
 }

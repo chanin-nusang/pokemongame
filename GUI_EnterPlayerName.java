@@ -51,6 +51,5 @@ public class GUI_EnterPlayerName extends JFrame{
 		Label3.setBounds(0, 0, 800, 600);
 		frame.getContentPane().add(Label3);
 
-
 	}
 }

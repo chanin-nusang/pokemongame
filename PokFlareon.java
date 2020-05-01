@@ -6,7 +6,7 @@ public class PokFlareon extends Pokemon {
 
     public void attack(Pokemon enemy){
         System.out.println("Pokemon " + name + " attack " + enemy.getName());
-        enemy.damage(620);
+        enemy.damage(10);
     }
 
 }

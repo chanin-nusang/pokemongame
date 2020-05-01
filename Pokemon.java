@@ -1,10 +1,8 @@
 public abstract class Pokemon{
-    //Attribute
     protected String name;
     protected int hp;
     protected String image;
     
-    //Constructor
     public Pokemon(String name){
         this.name = name;
         this.hp = 0;
@@ -20,7 +18,7 @@ public abstract class Pokemon{
     public void setName(String name){
         this.name = name;
     }
-    //Accessor Method
+
     public String getName(){
         return this.name;
     }
@@ -28,6 +26,7 @@ public abstract class Pokemon{
     public void setHP(int hp){
         this.hp = hp;
     }
+
     public int getHP(){
         return this.hp;
     }
@@ -36,8 +35,6 @@ public abstract class Pokemon{
         return image;
     }
 
-
-    //Mutator Method
     public boolean damage(int value){
         if(hp == 0){
             return false;
@@ -53,10 +50,8 @@ public abstract class Pokemon{
 
     }
 
-    //Abstract Method
     public abstract void attack(Pokemon enemy);
 
-    //Method
     public String toString(){
         return name;
     }

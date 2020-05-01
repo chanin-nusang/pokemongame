@@ -1,19 +1,15 @@
 import javax.swing.*;
-import javax.swing.plaf.BorderUIResource;
-import java.awt.*;
 import java.awt.event.*;
 
 public class GUI_WelcomePage extends JFrame{
 
 	protected JFrame frame;
-	//protected String playerName;
 
 	public GUI_WelcomePage() {
 		welcome();
 	}
 
 	private void welcome() {
-		//super("Pokemon Game");
 
         frame = new JFrame("Pokemon Game");
         frame.setResizable(false);
@@ -41,59 +37,8 @@ public class GUI_WelcomePage extends JFrame{
                 if( e.getKeyCode() == KeyEvent.VK_ESCAPE);
 				GUI_EnterPlayerName pn = new GUI_EnterPlayerName();
         		pn.frame.setVisible(true);
-				//System.exit(0);
 				frame.dispose();
-
 			}
         });
 	}
 }
-
-/*public class MainGame extends JFrame{
-
-    private Trainer trainer;
-    private JFrame frame;
-    
-
-    /*public MainGame(Trainer trainer){
-        super("Pokemon Game");
-
-        this.trainer = trainer;
-
-
-        Container c = getContentPane();
-        JLabel trainerNameLabel = new JLabel(this.trainer.getName());
-        JLabel pokemonName = new JLabel();
-
-
-        JButton firstPokemon = new JButton(trainer.getBag().get(0).getName() + " Status");
-
-        c.add(trainerNameLabel);
-        c.add(pokemonName);
-        c.add(firstPokemon);
-        
-
-        c.setLayout(new BoxLayout(c, BoxLayout.Y_AXIS));
-
-        String pName = "Pokemon: ";
-        for(Pokemon p: trainer.getBag()){
-            pName += p.getName() + ", ";
-        }
-
-        pokemonName.setText(pName);
-
-        firstPokemon.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                PokemonStatus ps = new PokemonStatus(trainer.getBag().get(0));
-            }
-        });
-
- 
-
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 600);
-        setVisible(true);
-        setLocationRelativeTo(null);
-    }*/
-
-

@@ -1,7 +1,4 @@
 import javax.swing.*;
-import javax.swing.plaf.BorderUIResource;
-import javax.swing.text.TabExpander;
-
 import java.awt.*;
 import java.awt.event.*;
 
@@ -47,11 +44,9 @@ public class GUI_shop extends JFrame{
 		Lab_coins.setFont(new Font("Pokemon Solid", Font.PLAIN, 22));
 		frame.getContentPane().add(Lab_coins);
         
-
 		JButton btn_item1 = new JButton("80");
 		btn_item1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//coi = Trainer.getCoin();
 				if(Trainer.getCoin() < 80){
 					MyDialogPopup2 dialog = new MyDialogPopup2();
 					dialog.setVisible(true);
@@ -60,7 +55,7 @@ public class GUI_shop extends JFrame{
 					System.out.println("\n" + Trainer.getCoin());
 					Trainer.setCoin(Trainer.getCoin() - 80);
 					System.out.println("Coin = " + Trainer.getCoin());
-					Trainer.setBall(Trainer.getBall() + 20);
+					Trainer.setBall(Trainer.getBall() + 10);
 					System.out.println("Ball = " + Trainer.getBall());
 					Lab_coins.setText("" + Trainer.getCoin());
 				}
@@ -82,7 +77,7 @@ public class GUI_shop extends JFrame{
 					System.out.println("\n" + Trainer.getCoin());
 					Trainer.setCoin(Trainer.getCoin() - 350);
 					System.out.println("Coin = " + Trainer.getCoin());
-					Trainer.setBall(Trainer.getBall() + 100);
+					Trainer.setBall(Trainer.getBall() + 20);
 					System.out.println("Ball = " + Trainer.getBall());
 					Lab_coins.setText("" + Trainer.getCoin());
 				}
@@ -104,7 +99,7 @@ public class GUI_shop extends JFrame{
 					System.out.println("\n" + Trainer.getCoin());
 					Trainer.setCoin(Trainer.getCoin() - 600);
 					System.out.println("Coin = " + Trainer.getCoin());
-					Trainer.setBall(Trainer.getBall() + 200);
+					Trainer.setBall(Trainer.getBall() + 35);
 					System.out.println("Ball = " + Trainer.getBall());
 					Lab_coins.setText("" + Trainer.getCoin());
 				}
@@ -126,7 +121,7 @@ public class GUI_shop extends JFrame{
 					System.out.println("\n" + Trainer.getCoin());
 					Trainer.setCoin(Trainer.getCoin() - 800);
 					System.out.println("Coin = " + Trainer.getCoin());
-					Trainer.setPotion(Trainer.getPotion() + 100);
+					Trainer.setPotion(Trainer.getPotion() + 15);
 					System.out.println("Potion = " + Trainer.getPotion());
 					Lab_coins.setText("" + Trainer.getCoin());
 				}
@@ -148,7 +143,7 @@ public class GUI_shop extends JFrame{
 					System.out.println("\n" + Trainer.getCoin());
 					Trainer.setCoin(Trainer.getCoin() - 1400);
 					System.out.println("Coin = " + Trainer.getCoin());
-					Trainer.setPotion(Trainer.getPotion() + 200);
+					Trainer.setPotion(Trainer.getPotion() + 25);
 					System.out.println("Potion = " + Trainer.getPotion());
 					Lab_coins.setText("" + Trainer.getCoin());
 				}
@@ -170,7 +165,7 @@ public class GUI_shop extends JFrame{
 					System.out.println("\n" + Trainer.getCoin());
 					Trainer.setCoin(Trainer.getCoin() - 2000);
 					System.out.println("Coin = " + Trainer.getCoin());
-					Trainer.setPotion(Trainer.getPotion() + 300);
+					Trainer.setPotion(Trainer.getPotion() + 40);
 					System.out.println("Potion = " + Trainer.getPotion());
 					Lab_coins.setText("" + Trainer.getCoin());
 				}
@@ -192,37 +187,36 @@ public class GUI_shop extends JFrame{
 
 class MyDialogPopup2 extends JDialog {
 		
-		public MyDialogPopup2() {
+	public MyDialogPopup2() {
 
-			setBounds(100, 100, 300, 175);
-			setTitle("Warning!");
-            setLocationRelativeTo(null);
-            ImageIcon dia = new ImageIcon("image/pokemonicon.png");
-            setIconImage(dia.getImage());
-            getContentPane().setLayout(null);
-			setBackground(Color.YELLOW);
-			
-			// Button OK
-			JButton btnOK = new JButton();
-			btnOK.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					dispose();
-				}
-            });
-            btnOK.setIcon(new ImageIcon("image/b_ok.png"));
-			btnOK.setBounds(90, 80, 100, 30);
-			getContentPane().add(btnOK);
+		setBounds(100, 100, 300, 175);
+		setTitle("Warning!");
+		setLocationRelativeTo(null);
+		ImageIcon dia = new ImageIcon("image/pokemonicon.png");
+		setIconImage(dia.getImage());
+		getContentPane().setLayout(null);
+		setBackground(Color.YELLOW);
+		
+		JButton btnOK = new JButton();
+		btnOK.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnOK.setIcon(new ImageIcon("image/b_ok.png"));
+		btnOK.setBounds(90, 80, 100, 30);
+		getContentPane().add(btnOK);
 
-			JLabel Lab_enough = new JLabel("Your coins is not enough.");
-			Lab_enough.setBounds(5, 30, 280, 50);
-			Lab_enough.setHorizontalAlignment(SwingConstants.CENTER);
-			getContentPane().add(Lab_enough);
-			Lab_enough.setFont(new Font("Pokemon Solid", Font.PLAIN, 16));
-            
-            JLabel Lab_enoughbg = new JLabel(" ");
-		    Lab_enoughbg.setIcon(new ImageIcon("image/editnamedialog.png"));
-		    Lab_enoughbg.setBounds(0, 0, 296, 175);
-            getContentPane().add(Lab_enoughbg);
-			
-		}
+		JLabel Lab_enough = new JLabel("Your coins is not enough.");
+		Lab_enough.setBounds(5, 30, 280, 50);
+		Lab_enough.setHorizontalAlignment(SwingConstants.CENTER);
+		getContentPane().add(Lab_enough);
+		Lab_enough.setFont(new Font("Pokemon Solid", Font.PLAIN, 16));
+		
+		JLabel Lab_enoughbg = new JLabel(" ");
+		Lab_enoughbg.setIcon(new ImageIcon("image/editnamedialog.png"));
+		Lab_enoughbg.setBounds(0, 0, 296, 175);
+		getContentPane().add(Lab_enoughbg);
+		
+	}
 }
